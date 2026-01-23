@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="gender" value="male" onchange="changeGender()">Male
+    <input type="radio" name="gender" value="female" onchange="changeGender()">Female
+    
+    <script>
+       function changeGender(){
+        //เลือก gender ทั้งหมด
+        let genders = document.querySelectorAll('input[name="gender"]');
+        // ดูว่าอันไหนมัน check
+
+        for (let i=0;i< genders.length;i++){
+            if (genders[i].checked){
+                console.log("Gender selected: "+ genders[i].value);
+            }
+        } 
+       }
+    </script>
+</body>
+</html>
+
+
+<!--
+    งานอดิเรก :
+    <input type="checkbox" name="fname" value="ฟุตบอล"> ฟุตบอล
+    <input type="checkbox" name="fname" value="บาสเกตบอล"> บาสเกตบอล
+    <input type="checkbox" name="fname" value="ว่ายน้ำ"> ว่ายน้ำชื่อ:<input 
+    id="fname"
+    class="input"
+    type="text"
+    name="fname"
+    value="ชื่อทดสอบ">
+
+    นามสกุล:<input
+    id="lname"
+    class="input"
+    type="text"
+    name="lname"
+    value="นามสกุลทดสอบ">
+
+    เบอร์:<input
+    id="phone"
+    class="input"
+    type="text"
+    name="phone"
+    value=""01234586789>
+
+#event
+    <button onclick="userClick()"> Click me</button>
+    <div onclick="divClick()">Click div</div>
+    
+
+       function userClick(){
+        console.log("Button was clicked!");
+       }
+       function divClick(){
+        console.log("Div was clicked!");
+       }
+
+    
+    /*let fnameInput = Document.getElementByID('fname')
+        console.log(fnameInput.value);*/
+        /*let inputs = document.getElementsByClassName('input');
+        console.log(inputs.length);//2 
+        for(let i = 0; i < inputs.length; i++ ){
+       //* let inputs = document.querySelector('input[name="fname"]');
+       //*console.log(inputs.value); //2 *-->
