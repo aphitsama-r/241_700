@@ -1,0 +1,94 @@
+/* 1. ดึง Font จากโฟลเดอร์ Kanit ที่อยู่ด้านนอก */
+@font-face {
+    font-family: 'Kanit';
+    /* ../ หมายถึงถอยออกจากโฟลเดอร์ Frontend 1 ชั้น */
+    src: url('../Kanit/Kanit-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('../Kanit/Kanit-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* 2. ตั้งค่าพื้นฐานและ Layout */
+* {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 3. ตกแต่งฟอร์มให้ดูดี */
+.container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-input {
+    margin-bottom: 15px;
+}
+
+.header-form {
+    min-width: 80px;
+    font-weight: 500;
+}
+
+.form, textarea {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 5px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
