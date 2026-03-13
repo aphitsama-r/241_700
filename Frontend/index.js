@@ -52,10 +52,10 @@ const submitData = async () => {
 
     const errors = validateData(userData);
     if (errors.length > 0){
-        throw {
-            message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
-            errors: errors
-        }
+       throw {
+           message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+           errors: errors
+       }
     }
 
         const response = await axios.post('http://localhost:8000/users', userData);
@@ -64,10 +64,14 @@ const submitData = async () => {
         messageDom.className = 'message success';
     }catch (error) {
         console.log('error message',error.message);
-        console.log('error details',error.error);
-        //if (error.response) {
-       //     console.error('Error response:', error.response.data.message);
-       // }
+        console.log('error details',error.errors);
+
+       if (error.response) {
+            console.error('Error response:', error.response);
+            error.message = error.response.data.message
+            error.errors = error.response.data.errors
+       }
+
        let htmlData = '<div>'
        htmlData += `<div>${error.message}</div>`;
        htmlData += '<ul>';
